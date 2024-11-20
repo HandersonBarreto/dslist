@@ -3,7 +3,7 @@ package com.devsuperior.DSList.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.DSList.DTO.GameDTO;
@@ -11,7 +11,7 @@ import com.devsuperior.DSList.DTO.GameMinDTO;
 import com.devsuperior.DSList.entities.Game;
 import com.devsuperior.DSList.repositories.GameRepository;
 
-@Component
+@Service
 public class GameService {
 
 	@Autowired
@@ -30,5 +30,7 @@ public class GameService {
 		List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
 		return dto;
 	}
+	
+
 
 }
